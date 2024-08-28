@@ -1,0 +1,19 @@
+{
+    "name": "ExportCalendar",
+    "description": "Export CUC Courses to Calendar",
+    "version": "1.0",
+    "manifest_version": 3,
+    "background": {
+        "service_worker": "background.js"
+    },
+    "permissions": ["activeTab", "scripting"],
+    "action": {
+        "default_popup": "popup.html"
+    },
+    "content_scripts": [
+    {
+      "matches": ["https://bkjw.cuc.edu.cn/*"],
+      "js": ["Scripts/jquery-3.7.1.min.js", "Scripts/writeCalendar.js"]
+    }
+  ]
+}
